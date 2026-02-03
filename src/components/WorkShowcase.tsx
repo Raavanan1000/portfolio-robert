@@ -1,24 +1,25 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { BeforeAfter } from './BeforeAfter';
-import { Sparkles } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { BeforeAfter } from "./BeforeAfter";
+import { Sparkles } from "lucide-react";
 const projects = [
-{
-  id: 1,
-  title: 'Neon Nights: Cyberpunk Short',
-  description:
-  "A love letter to Blade Runner. Deep cyans, piercing magentas, and skin tones that somehow stay human amidst all the synthetic chaos. The DP wanted 'future noir'—I gave them 'future heartbreak.'",
-  before: '/images/project1-before.png',
-  after: '/images/project1-after.png'
-},
-{
-  id: 2,
-  title: 'Desert Mirage: Documentary',
-  description:
-  'Shot in the Mojave at golden hour. The challenge? Making heat *visible*. Pushed warm amber highlights until they glowed, kept the sky gradients natural. You can almost feel the sun on your skin.',
-  before: '/images/project2-before.png',
-  after: '/images/project2-after.png'
-},];
+  {
+    id: 1,
+    title: "Short Film",
+    description:
+      "Images from a short film I worked on. The director wanted a specific look and feel, and I was able to deliver that through color grading.",
+    before: "/images/project1-before.png",
+    after: "/images/project1-after.png",
+  },
+  {
+    id: 2,
+    title: "Short Film",
+    description:
+      "Images from a short film I worked on. The director wanted a specific look and feel, and I was able to deliver that through color grading.",
+    before: "/images/project2-before.png",
+    after: "/images/project2-after.png",
+  },
+];
 
 export function WorkShowcase() {
   return (
@@ -31,31 +32,31 @@ export function WorkShowcase() {
         <motion.div
           initial={{
             opacity: 0,
-            y: 20
+            y: 20,
           }}
           whileInView={{
             opacity: 1,
-            y: 0
+            y: 0,
           }}
           viewport={{
-            once: true
+            once: true,
           }}
           transition={{
-            duration: 0.6
+            duration: 0.6,
           }}
-          className="mb-16 text-center">
-
+          className="mb-16 text-center"
+        >
           <motion.div
             className="inline-flex items-center gap-2 mb-4"
             animate={{
-              rotate: [0, 5, -5, 0]
+              rotate: [0, 5, -5, 0],
             }}
             transition={{
               duration: 4,
               repeat: Infinity,
-              ease: 'easeInOut'
-            }}>
-
+              ease: "easeInOut",
+            }}
+          >
             <Sparkles className="w-5 h-5 text-cosmic-purple" />
             <span className="text-cosmic-purple font-mono text-sm tracking-widest uppercase">
               Selected Works
@@ -72,57 +73,57 @@ export function WorkShowcase() {
         </motion.div>
 
         <div className="space-y-24">
-          {projects.map((project, index) =>
-          <motion.div
-            key={project.id}
-            initial={{
-              opacity: 0,
-              y: 40
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0
-            }}
-            viewport={{
-              once: true,
-              margin: '-100px'
-            }}
-            transition={{
-              duration: 0.8,
-              delay: index * 0.1
-            }}>
-
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial={{
+                opacity: 0,
+                y: 40,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+                margin: "-100px",
+              }}
+              transition={{
+                duration: 0.8,
+                delay: index * 0.1,
+              }}
+            >
               <BeforeAfter
-              beforeImage={project.before}
-              afterImage={project.after}
-              title={project.title}
-              description={project.description} />
-
+                beforeImage={project.before}
+                afterImage={project.after}
+                title={project.title}
+                description={project.description}
+              />
             </motion.div>
-          )}
+          ))}
         </div>
 
         <motion.div
           initial={{
-            opacity: 0
+            opacity: 0,
           }}
           whileInView={{
-            opacity: 1
+            opacity: 1,
           }}
           viewport={{
-            once: true
+            once: true,
           }}
           transition={{
-            delay: 0.6
+            delay: 0.6,
           }}
-          className="mt-16 text-center">
-
+          className="mt-16 text-center"
+        >
           <p className="text-cinema-muted text-sm italic">
             Want to see more? Full portfolio available upon request. (Some
             projects are under NDA, but I promise they're cool.)
           </p>
         </motion.div>
       </div>
-    </section>);
-
+    </section>
+  );
 }
