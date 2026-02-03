@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
-import { Sparkles, Coffee, Film, Award } from "lucide-react";
+import { Sparkles, Coffee } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
+
 export function About() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-24 px-4 bg-cinema-dark relative overflow-hidden">
       {/* Cosmic decorative elements */}
@@ -86,26 +90,18 @@ export function About() {
           <div className="flex items-center gap-2 mb-4">
             <Sparkles className="w-4 h-4 text-cosmic-purple" />
             <span className="text-cosmic-purple font-mono text-sm tracking-widest uppercase">
-              À Propos
+              {t.about.title}
             </span>
           </div>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">
-            Painting with{" "}
+            {t.about.paintingQuery.split(" ").slice(0, 2).join(" ")}{" "}
             <span className="bg-gradient-to-r from-cosmic-purple to-cosmic-pink bg-clip-text text-transparent">
-              Light & Shadow
+              {t.about.paintingQuery.split(" ").slice(2).join(" ")}
             </span>
           </h2>
           <div className="space-y-6 text-cinema-muted font-light text-lg leading-relaxed">
-            <p>
-              Based in Paris, I collaborate remotely with filmmakers across
-              Europe and internationally. My approach to color grading is rooted
-              in careful observation, refined taste, and a deep respect for the
-              image guided by understanding and intent rather than tools alone.
-            </p>
-            <p className="text-cosmic-cyan italic">
-              "Color is the keyboard, the eyes are the harmonies, the soul is
-              the piano with many strings."
-            </p>
+            <p>{t.about.intro}</p>
+            <p className="text-cosmic-cyan italic">"{t.about.quote}"</p>
           </div>
 
           <motion.div
@@ -124,7 +120,7 @@ export function About() {
             className="mt-8 flex items-center gap-3 text-sm text-cinema-muted"
           >
             <Coffee className="w-4 h-4 text-cinema-amber" />
-            <span>Fueled by espresso and late-night grading sessions</span>
+            <span>{t.about.fuel}</span>
           </motion.div>
         </motion.div>
       </div>

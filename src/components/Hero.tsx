@@ -1,7 +1,10 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { ChevronDown, Film, Sparkles, MapPin } from "lucide-react";
+import { ChevronDown, Sparkles, MapPin } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
+
 export function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden px-4">
       {/* Cosmic Background Layers */}
@@ -67,7 +70,7 @@ export function Hero() {
         >
           <Sparkles className="w-5 h-5 text-cosmic-purple" />
           <span className="text-cosmic-purple font-mono text-sm tracking-[0.2em] uppercase">
-            Étalonneur Numérique
+            {t.hero.role}
           </span>
           <Sparkles className="w-5 h-5 text-cosmic-purple" />
         </motion.div>
@@ -110,7 +113,7 @@ export function Hero() {
         >
           <MapPin className="w-4 h-4 text-cosmic-cyan" />
           <span className="text-cosmic-cyan font-mono text-sm tracking-wider">
-            Paris, France
+            {t.hero.location}
           </span>
         </motion.div>
 
@@ -127,7 +130,7 @@ export function Hero() {
           }}
           className="font-sans text-lg md:text-2xl text-cinema-text max-w-2xl mx-auto font-light leading-relaxed mb-8 italic"
         >
-          "Every frame is a canvas. Every color tells a story."
+          "{t.hero.quote}"
         </motion.p>
 
         <motion.div
@@ -197,7 +200,7 @@ export function Hero() {
         className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
         <span className="text-xs font-mono text-cosmic-purple tracking-widest uppercase">
-          Découvrez mon travail
+          {t.hero.scroll}
         </span>
         <motion.div
           animate={{

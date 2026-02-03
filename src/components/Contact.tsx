@@ -8,7 +8,11 @@ import {
   MapPin,
   Clock,
 } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
+
 export function Contact() {
+  const { t } = useLanguage();
+
   return (
     <footer className="py-24 px-4 bg-cinema-dark border-t border-cosmic-purple/20 relative overflow-hidden">
       {/* Cosmic background effects */}
@@ -58,24 +62,23 @@ export function Contact() {
           </motion.div>
 
           <h2 className="font-display text-4xl md:text-6xl font-bold text-white mb-8">
-            Let's Create Something{" "}
+            {t.contact.spark.split(" ").slice(0, 3).join(" ")}{" "}
             <span className="bg-gradient-to-r from-cosmic-purple via-cosmic-pink to-cosmic-blue bg-clip-text text-transparent">
-              Cinématique
+              {t.contact.spark.split(" ").slice(3).join(" ")}
             </span>
           </h2>
           <p className="text-xl text-cinema-muted mb-4 font-light">
-            Available for projects worldwide. Remote grading or in-person
-            sessions in Paris.
+            {t.contact.availability}
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-6 mb-12 text-sm text-cinema-muted">
             <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4 text-cosmic-cyan" />
-              <span>Paris, 11ème arrondissement</span>
+              <span>{t.contact.location}</span>
             </div>
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4 text-cosmic-purple" />
-              <span>CET Timezone (UTC+1)</span>
+              <span>{t.contact.timezone}</span>
             </div>
           </div>
 
@@ -89,7 +92,7 @@ export function Contact() {
             }}
             className="inline-flex items-center gap-3 bg-gradient-to-r from-cosmic-purple to-cosmic-pink text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] transition-all duration-300 mb-16 cosmic-glow"
           >
-            Discutons de votre projet <ArrowRight className="w-5 h-5" />
+            {t.contact.cta} <ArrowRight className="w-5 h-5" />
           </motion.a>
 
           <div className="flex justify-center gap-8 mb-12">
@@ -159,8 +162,7 @@ export function Contact() {
           </motion.div>
 
           <div className="text-sm text-cinema-gray font-mono">
-            © {new Date().getFullYear()} Anton Robert · Coloriste DI · Paris,
-            France
+            {t.contact.footer}
           </div>
 
           <motion.p
@@ -178,7 +180,7 @@ export function Contact() {
             }}
             className="mt-4 text-xs text-cinema-gray/60 italic"
           >
-            "La couleur est ma vie. Le cinéma est mon âme."
+            "{t.contact.quote}"
           </motion.p>
         </motion.div>
       </div>

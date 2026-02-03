@@ -1,27 +1,28 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { BeforeAfter } from "./BeforeAfter";
 import { Sparkles } from "lucide-react";
-const projects = [
-  {
-    id: 1,
-    title: "Short Film",
-    description:
-      "Images from a short film I worked on. The director wanted a specific look and feel, and I was able to deliver that through color grading.",
-    before: "/images/project1-before.png",
-    after: "/images/project1-after.png",
-  },
-  {
-    id: 2,
-    title: "Short Film",
-    description:
-      "Images from a short film I worked on. The director wanted a specific look and feel, and I was able to deliver that through color grading.",
-    before: "/images/project2-before.png",
-    after: "/images/project2-after.png",
-  },
-];
+import { useLanguage } from "../context/LanguageContext";
 
 export function WorkShowcase() {
+  const { t } = useLanguage();
+
+  const projects = [
+    {
+      id: 1,
+      title: t.work.project1.title,
+      description: t.work.project1.desc,
+      before: "/images/project1-before.png",
+      after: "/images/project1-after.png",
+    },
+    {
+      id: 2,
+      title: t.work.project2.title,
+      description: t.work.project2.desc,
+      before: "/images/project2-before.png",
+      after: "/images/project2-after.png",
+    },
+  ];
+
   return (
     <section className="py-24 px-4 bg-cinema-black relative overflow-hidden">
       {/* Cosmic accent elements */}
@@ -59,16 +60,15 @@ export function WorkShowcase() {
           >
             <Sparkles className="w-5 h-5 text-cosmic-purple" />
             <span className="text-cosmic-purple font-mono text-sm tracking-widest uppercase">
-              Selected Works
+              {t.work.selectedWorks}
             </span>
             <Sparkles className="w-5 h-5 text-cosmic-purple" />
           </motion.div>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-white bg-gradient-to-r from-white via-cosmic-purple to-cosmic-pink bg-clip-text text-transparent mb-4">
-            Recent Projects
+            {t.work.title}
           </h2>
           <p className="text-cinema-muted text-lg max-w-2xl mx-auto">
-            Drag the slider to see the transformation. Raw footage → graded
-            magic.
+            {t.work.dragSlider}
           </p>
         </motion.div>
 
@@ -118,10 +118,7 @@ export function WorkShowcase() {
           }}
           className="mt-16 text-center"
         >
-          <p className="text-cinema-muted text-sm italic">
-            Want to see more? Full portfolio available upon request. (Some
-            projects are under NDA, but I promise they're cool.)
-          </p>
+          <p className="text-cinema-muted text-sm italic">{t.work.moreWork}</p>
         </motion.div>
       </div>
     </section>

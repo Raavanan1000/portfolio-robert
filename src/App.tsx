@@ -1,5 +1,10 @@
-import React from 'react';
-import { Portfolio } from './pages/Portfolio';
+import { Portfolio } from "./pages/Portfolio";
+import { LanguageProvider } from "./context/LanguageContext";
+
 export function App() {
-  return <Portfolio />;
+  return (
+    <LanguageProvider>
+      <Portfolio />
+    </LanguageProvider>
+  );
 }

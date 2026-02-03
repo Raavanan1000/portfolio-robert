@@ -1,15 +1,17 @@
-import React from 'react';
-import { Hero } from '../components/Hero';
-import { Services } from '../components/Services';
-import { WorkShowcase } from '../components/WorkShowcase';
-import { ColorPhilosophy } from '../components/ColorPhilosophy';
-import { About } from '../components/About';
-import { Tools } from '../components/Tools';
-import { Process } from '../components/Process';
-import { Contact } from '../components/Contact';
+import { Hero } from "../components/Hero";
+import { Services } from "../components/Services";
+import { WorkShowcase } from "../components/WorkShowcase";
+import { ColorPhilosophy } from "../components/ColorPhilosophy";
+import { About } from "../components/About";
+import { Tools } from "../components/Tools";
+import { Process } from "../components/Process";
+import { Contact } from "../components/Contact";
+import { LanguageSwitcher } from "../components/LanguageSwitcher";
+
 export function Portfolio() {
   return (
-    <div className="min-h-screen bg-cinema-black text-white selection:bg-cosmic-purple selection:text-white">
+    <div className="relative min-h-screen bg-cinema-black text-white selection:bg-cosmic-purple selection:text-white">
+      <LanguageSwitcher />
       {/* Cosmic Background Layers */}
       <div className="starfield" />
       <div className="nebula-overlay" />
@@ -25,6 +27,6 @@ export function Portfolio() {
         <Process />
         <Contact />
       </main>
-    </div>);
-
+    </div>
+  );
 }
