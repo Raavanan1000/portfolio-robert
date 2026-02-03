@@ -8,31 +8,17 @@ const projects = [
   title: 'Neon Nights: Cyberpunk Short',
   description:
   "A love letter to Blade Runner. Deep cyans, piercing magentas, and skin tones that somehow stay human amidst all the synthetic chaos. The DP wanted 'future noir'—I gave them 'future heartbreak.'",
-  before:
-  'https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=1920&auto=format&fit=crop&sat=-50&bri=-10',
-  after:
-  'https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=1920&auto=format&fit=crop'
+  before: '/images/project1-before.png',
+  after: '/images/project1-after.png'
 },
 {
   id: 2,
   title: 'Desert Mirage: Documentary',
   description:
   'Shot in the Mojave at golden hour. The challenge? Making heat *visible*. Pushed warm amber highlights until they glowed, kept the sky gradients natural. You can almost feel the sun on your skin.',
-  before:
-  'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1920&auto=format&fit=crop&sat=-30',
-  after:
-  'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1920&auto=format&fit=crop&sat=50&con=20'
-},
-{
-  id: 3,
-  title: 'The Silent Room: Indie Drama',
-  description:
-  'Low-key interior, single character, crushing loneliness. Crushed the blacks for claustrophobia but kept shadow detail legible—you need to *see* the pain, not just feel it. This one won a festival award for cinematography.',
-  before:
-  'https://images.unsplash.com/photo-1517639493569-5666a780fd6c?q=80&w=1920&auto=format&fit=crop&exp=10&con=-20',
-  after:
-  'https://images.unsplash.com/photo-1517639493569-5666a780fd6c?q=80&w=1920&auto=format&fit=crop'
-}];
+  before: '/images/project2-before.png',
+  after: '/images/project2-after.png'
+},];
 
 export function WorkShowcase() {
   return (

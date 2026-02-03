@@ -81,7 +81,7 @@ export function Contact() {
           </div>
 
           <motion.a
-            href="mailto:bonjour@antonrobert.com"
+            href="mailto:robertvfx95@gmail.com"
             whileHover={{
               scale: 1.05
             }}
@@ -107,7 +107,7 @@ export function Contact() {
             },
             {
               icon: Mail,
-              href: 'mailto:bonjour@antonrobert.com',
+              href: 'mailto:robertvfx95@gmail.com',
               label: 'Email'
             }].
             map((social, index) =>
